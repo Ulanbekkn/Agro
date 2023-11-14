@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from django.contrib.auth import get_user_model
 from .serializers import ChangePasswordSerializer, ForgotPasswordSerializer, ForgotPasswordCompleteSerializer
 from rest_framework.permissions import IsAuthenticated
+from apps.profilee.models import ProfileUser
 
 
 
@@ -29,6 +30,7 @@ class ActivationView(APIView):
             return Response('Пользователь не найден', status=400)
         user.is_active = True
         user.activation_code = ''
+        ProfileUser.objects.create(user=user)
         user.save()
         return Response('Аккаунт успешно активирован', status=200)
 
