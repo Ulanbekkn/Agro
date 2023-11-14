@@ -26,7 +26,7 @@ class UserManager(BaseUserManager):
     
 class User(AbstractUser):    
     email = models.EmailField(unique=True, primary_key=True)
-    activation_code = models.CharField(max_length=10, blank=True)
+    activation_code = models.CharField(max_length=30, blank=True)
     is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     username = None
