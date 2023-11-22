@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     #apps
     'apps.account',
     'apps.profilee',
+    'apps.product',
 ]
 
 MIDDLEWARE = [
