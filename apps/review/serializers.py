@@ -4,10 +4,6 @@ from apps.review.models import Favorite
 
 
 
-
-
-
-
 class FavoriteListSerializer(ModelSerializer):
     class Meta:
         model = Favorite
@@ -15,9 +11,10 @@ class FavoriteListSerializer(ModelSerializer):
 
 
 class FavoriteCreateSerializer(ModelSerializer):
-    author = ReadOnlyField(source='author.email')
+    user = ReadOnlyField(source='user.email')
+    product = ReadOnlyField()
 
     class Meta:
         model = Favorite
-        fields = ('product', 'author')
+        fields = ('product', 'user')
 
