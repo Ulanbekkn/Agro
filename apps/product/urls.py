@@ -1,13 +1,12 @@
 from django.urls import path, include
-from rest_framework.routers import SimpleRouter
-from apps.product.views import ProductViewSet, CommentCreateView
+from rest_framework.routers import DefaultRouter
+from apps.product.views import *
 
-router = SimpleRouter()
-router.register(r'product', ProductViewSet, basename='product')
+router = DefaultRouter()
+router.register('product', ProductViewSet)
 
 urlpatterns = [
-    path('comment/', CommentCreateView.as_view())
-]
+    path('', include(router.urls)),
+    path('user_product/', UserPostsListView.as_view(), name='user_product'),  
 
-urlpatterns += router.urls
-    
+]

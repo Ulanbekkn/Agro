@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from server.apps.infohub.models import AboutUs, ImageAgro, SNS
+from apps.infohub.models import AboutUs, ImageAgro, SNS
 
 
 @admin.register(AboutUs)

@@ -20,6 +20,7 @@ urlpatterns = [
     path('account/', include('apps.account.urls')),
     path('profilee/', include('apps.profilee.urls')),
     path('', include('apps.product.urls')),
+    path('', include('apps.review.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
