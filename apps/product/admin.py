@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.product.models import Product
+from apps.product.models import Product, ProductImage
 
 
 @admin.register(Product)
@@ -12,8 +12,10 @@ class ProductAdmin(admin.ModelAdmin):
     ordering = ("-time_create",)
 
 
+
+
 # @admin.register(Comment)
 # class CommentAdmin(admin.ModelAdmin):
 #     list_display = ['text', 'user', 'product', 'time_create']
 
-# admin.site.register(ProductImage)
+admin.site.register(ProductImage)

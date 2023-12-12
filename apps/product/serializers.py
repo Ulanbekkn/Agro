@@ -1,13 +1,46 @@
 from rest_framework.serializers import ModelSerializer
-from apps.product.models import Product
+from apps.product.models import *
 
-class ProductSerializer(ModelSerializer):
+
+
+class ProductImageSerializer(ModelSerializer):
+    class Meta:
+        model = ProductImage
+        fields = '__all__'
+
+
+
+class ProductDetailSerializer(ModelSerializer):
+    images = ProductImageSerializer(many=True, read_only=True)
+
+
     class Meta:
         model = Product
         fields = '__all__'
-        
 
         
+
+class ProductListSerializer(ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = ['id', 'price', 'title_product', 'image']        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

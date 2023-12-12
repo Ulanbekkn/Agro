@@ -18,17 +18,9 @@ class Product(models.Model):
     number = models.CharField(verbose_name='Номер', max_length=10)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='products_photos/', blank=True, null=True)
 
     
-# class ProductImage(models.Model):
-#     image = models.ImageField(upload_to='products_photos/', blank=True, null=True)
-#     post = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
-
-
-
-# class Comment(models.Model):
-#     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     text = models.CharField(max_length=255)
-#     time_create = models.DateTimeField(auto_now_add=True)
-
+class ProductImage(models.Model):
+    image = models.ImageField(upload_to='products_photos/', blank=True, null=True)
+    post = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
