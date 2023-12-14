@@ -10,10 +10,6 @@ from apps.review.serializers import FavoriteCreateSerializer, CommentSerializer
 from rest_framework import generics
 
 
-
-
-
-
 # class PermissionMixin:
     # def get_permissions(self):
     #     if self.action in ('create',):
@@ -100,8 +96,5 @@ class CategoryView(generics.ListAPIView):
         category_slug = self.kwargs['category']
         category = category_slug.replace('-', ' ')
         queryset = Product.objects.filter(category=category)
-        print(category_slug)
-        print(category)
-        print(queryset)
         return queryset
         
