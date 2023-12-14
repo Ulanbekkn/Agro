@@ -22,9 +22,9 @@ class Favorite(models.Model):
 
 
 
-# class Comment(models.Model):
-#     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     text = models.CharField(max_length=255)
-#     time_create = models.DateTimeField(auto_now_add=True)
+class Comment(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    text = models.TextField()
+    time_create = models.DateTimeField(auto_now_add=True)
 

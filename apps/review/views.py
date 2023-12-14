@@ -2,6 +2,8 @@ from rest_framework import generics
 from .serializers import FavoriteListSerializer
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
+from apps.review.models import Comment
+
 
 
 
@@ -12,4 +14,5 @@ class FavoriteListView(generics.ListAPIView):
 
     def get_queryset(self):
         return self.request.user.favorites.all()
-    
+
+
