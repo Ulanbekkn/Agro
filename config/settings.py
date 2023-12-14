@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.account',
     'apps.profilee',
     'apps.product',
+    'apps.infohub',
     'apps.review',
 ]
 
