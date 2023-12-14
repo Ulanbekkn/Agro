@@ -31,53 +31,6 @@ class ProductListSerializer(ModelSerializer):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class CommentSerializer(serializers.ModelSerializer):
-#     user_nickname = serializers.CharField(source='user.username', read_only=True)
-
-#     class Meta:
-#         model = Comment
-#         fields = ('user_nickname', 'product_id', 'text', 'time_create')
-
-
-# class ProductListSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Product
-#         fields = ('id', 'images', 'title_product', 'price')
-
-
 # class ProductDetailSerializer(serializers.ModelSerializer):
 #     user_nickname = serializers.CharField(source='user.username', read_only=True)
 #     user = serializers.HiddenField(default=serializers.CurrentUserDefault())

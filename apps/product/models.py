@@ -1,6 +1,7 @@
 from django.db import models
 from apps.product.service import STATUS_CHOICES, CATEGORY_CHOICES
 from django.contrib.auth import get_user_model
+from apps.profilee.models import validate_phone_number
 
 User = get_user_model()
 
@@ -15,7 +16,7 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Описание')
     category = models.CharField(verbose_name='Категория', choices=CATEGORY_CHOICES, max_length=25)
     price = models.IntegerField(verbose_name='Цена')
-    number = models.CharField(verbose_name='Номер', max_length=10)
+    number = models.CharField(verbose_name='Номер', max_length=20, validators=[validate_phone_number])
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='products_photos/', blank=True, null=True)
