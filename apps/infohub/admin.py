@@ -14,6 +14,6 @@ class ImageAgroAdmin(admin.ModelAdmin):
 
 
 @admin.register(SNS)
-class ImageAgroAdmin(admin.ModelAdmin):
+class SNSAdmin(admin.ModelAdmin):
     list_display = ('instagram', 'twitter', 'facebook')
 
